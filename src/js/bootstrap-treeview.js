@@ -540,6 +540,17 @@
 				classList.push(_this.options.emptyIcon);
 			}
 
+			console.log("Right before adding")
+			console.log("Right before adding")
+			if (node.customData) {
+				console.log("Found right tag")
+				$.each(node.customData, function addCustomData(key, value) {
+					console.log("Adding custom data")
+					treeItem
+						.attr('data-' + key, value)
+				});
+			}
+
 			treeItem
 				.append($(_this.template.icon)
 					.addClass(classList.join(' '))
